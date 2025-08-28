@@ -1,16 +1,13 @@
 ---
 # You can also start simply with 'default'
-theme: seriph
+theme: default
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+background: '#3178C6'
 # some information about your slides (markdown enabled)
-title: Welcome to Slidev
+title: TypeScript na Prática
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
+  ## Explorando recursos para o dia a dia
 # apply unocss classes to the current slide
 class: text-center
 # https://sli.dev/features/drawing
@@ -21,6 +18,7 @@ transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 # open graph
+
 seoMeta:
   # By default, Slidev will use ./og-image.png if it exists,
   # or generate one from the first slide if not found.
@@ -28,19 +26,13 @@ seoMeta:
   # ogImage: https://cover.sli.dev
 ---
 
-# Welcome to Slidev
+# TypeScript na Prática
 
-Presentation slides for developers
+Explorando recursos para o dia a dia
 
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
 
 <div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
+  <a href="https://github.com/pedrogustavo/typescript-na-pratica" target="_blank" class="slidev-icon-btn">
     <carbon:logo-github />
   </a>
 </div>
@@ -50,592 +42,585 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
+layout: center
+background: '#3178c6' # azul do TypeScript
+class: text-white
 ---
 
-# What is Slidev?
+<div class="flex items-center justify-center gap-12">
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+  <!-- Foto -->
+  <div class="w-1/3">
+    <img 
+      src="/assets/pedro-perfil.jpeg" 
+      alt="Minha foto" 
+      class="rounded-2xl shadow-lg"
+    />
+  </div>
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
+  <!-- Texto -->
+  <div class="w-2/3">
+    <h1 class="text-4xl font-bold mb-4">Pedro Gustavo</h1>
+    <ul class="list-disc pl-6 space-y-2 text-lg">
+      <li>Dev. Frontend</li>
+      <li>Conta Stone Web</li>
+      <li>Time de Crédito</li>
+      <li>Desde de 2017 na Stone*</li>
+    </ul>
+  </div>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
+</div>
 
 ---
-transition: slide-up
-level: 2
+transition: slide-left
+layout: center
 ---
+<div class="flex items-center justify-center gap-10">
 
-# Navigation
+  <!-- GIF à esquerda -->
+  <div class="w-1/2 flex justify-center">
+    <img 
+      src="/assets/what-huh.gif" 
+      alt="Animação" 
+      class="rounded-xl shadow-lg max-h-[400px]"
+    />
+  </div>
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
+  <!-- Texto à direita -->
+  <div class="w-1/2">
+    <h1 class="text-4xl font-bold mb-4">TypeScript???</h1>
+    <p class="text-lg leading-relaxed">
+      Se alguém ainda não conhece
+    </p>
+    <ul class="list-disc pl-6 mt-4 space-y-2 text-lg">
+      <li>Superconjunto do JavaScript</li>
+      <li>Uma linguagem de programação fortemente tipada</li>
+      <li>Superset de JavaScript</li>
+    </ul>
+  </div>
 
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc text-sm minDepth="1" maxDepth="2" />
+</div>
 
 ---
-layout: image-right
-image: https://cover.sli.dev
+transition: slide-left
 ---
 
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
+# Afinal, por que TypeScript?
 
 <div grid="~ cols-2 gap-4">
-<div>
+  <div>
 
-You can use Vue components directly inside your slides.
+  Se JavaScript já roda em todo lugar, por que colocar “tipos” no meio do caminho?
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+  - Visualização de erros em tempo de desenvolvimento
+  - Melhor legibilidade de código
+  - Autocomplete
+  - ...
 
-```html
-<Counter :count="10" />
+  <br/>
+
+  ```ts
+  // TypeScript (te puxa pela orelha)
+  function formatBRL(amountCents: number) {
+    return (amountCents / 100).toFixed(2);
+  }
+  formatBRL("1000"); // ❌ Argument of type 'string' is not assignable to 'number'
+  ```
+
+  </div>
+  <div>
+  <img src="/assets/typescript.svg"/>
+
+  </div>
+</div>
+
+---
+layout: center
+background: '#ffffff'
+class: text-center
+---
+
+# Colocando a mão na massa 👨‍💻
+<p class="text-lg leading-relaxed">Como o Typescript pode nos ajudar no dia a dia</p>
+
+<div class="flex justify-center mt-8">
+  <img 
+    src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" 
+    alt="Coding gif" 
+    class="rounded-2xl shadow-xl max-h-[400px]"
+  />
+</div>
+
+---
+transition: slide-left
+
+---
+
+# Props para componentes
+<p class="text-lg leading-relaxed">Podemos utilizar para substituir no bom e velho PropTypes</p>
+
+
+```ts
+type AvatarProps = {
+  name: string
+  imageUrl?: string // opcional
+}
+
+export function Avatar({ name, imageUrl }: AvatarProps) {
+  return (
+    <div>
+      <img src={imageUrl ?? "/default.png"} alt={name} />
+      <p>{name}</p>
+    </div>
+  )
+}
+
 ```
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
-</div>
-<div>
+---
+transition: slide-left
 
-```html
-<Tweet id="1390115482657726468" />
+---
+
+# enum
+<p class="text-lg leading-relaxed">Garante constantes únicas e tipadas evitando typos em strings soltas</p>
+
+
+```ts
+export enum DiscountSettlementSteps {
+  SIMULATE = 'simulacao',
+  PROPOSAL = 'proposta',
+  PIN = 'pin',
+  PAYMENT_METHOD = 'forma-de-pagamento',
+  REVIEW = 'revisao'
+}
+
+const steps: { key: DiscountSettlementSteps; render: () => JSX.Element }[] = [
+  {
+    key: DiscountSettlementSteps.PROPOSAL,
+    render: () => <RenegotiationDiscountAmountSimulation userEmail={userEmail} mode={mode} />
+  },
+  {
+    key: DiscountSettlementSteps.PIN,
+    render: () => <RenegotiationChallenge saveSpotOffer={setSpotOffer} />
+  }
+]
+
 ```
 
-<Tweet id="1390115482657726468" scale="0.65" />
 
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
 
 ---
-class: px-20
+transition: slide-left
+
 ---
 
-# Themes
+# União de literais de string
+<p class="text-lg leading-relaxed">Define que a variável só pode assumir um entre valores exatos. Ótimo para evitar typos, ganhar autocomplete e usar como discriminador em switch</p>
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
 
-<div grid="~ cols-2 gap-2" m="t-2">
+```ts
+type UserType = 'Customer' | 'Operator' | 'Leadership';
 
-```yaml
----
-theme: default
----
+function canApprove(u: UserType) {
+  return u === 'Leadership';
+}
+
+let u: UserType = 'Operator';   // ok
+// u = 'Operater';              // ❌ erro: valor fora da união
+
+
 ```
 
-```yaml
+
+
+
 ---
-theme: seriph
+transition: slide-left
+
 ---
+
+# Interseção
+<p class="text-lg leading-relaxed">`&` em TypeScript é o operador de interseção: o valor precisa satisfazer todos os tipos ao mesmo tempo.</p>
+
+
+```ts
+type Identifiable = { id: string };
+type Timestamped  = { createdAt: string; updatedAt: string };
+
+type Payment = Identifiable & Timestamped & {
+  amountCents: number;
+  status: 'authorized' | 'captured' | 'refused';
+};
+
+// precisa ter todos os campos
+const p: Payment = {
+  id: 'p1',
+  createdAt: '2025-08-01',
+  updatedAt: '2025-08-10',
+  amountCents: 1299,
+  status: 'captured',
+};
+
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
+---
+transition: slide-left
 
 ---
 
-# Clicks Animations
+# Interfaces aninhadas
+<p class="text-lg leading-relaxed">Você modela um objeto complexo compondo interfaces menores (reutilizáveis). Isso melhora coesão, reuso e evolução independente dos “blocos” do domínio.</p>
 
-You can add `v-click` to elements to add a click animation.
 
-<div v-click>
+```ts
+export interface InstallmentPlan {
+  amount: number;
+  count: number;
+  totalSum: number;
+  paymentReferenceDate: string;
+  gracePeriod?: number;
+  daysToDownPayment?: number;
+}
 
-This shows up when you click the slide:
+export interface Renegotiation {
+  securities: SecurityRenegotiation[];
+  installmentPlan: InstallmentPlan;
+}
 
-```html
-<div v-click>This shows up when you click the slide.</div>
+export interface RenegotiationProposal {
+  id: string;
+  offerId: string;
+  type: string;
+  status: string;
+  expirationDate: string;
+  creationDate: string;
+  lastUpdateDate?: string;
+  discountSettlement?: ProposalDiscountSettlement;
+  customer: NegotiationsCustomer;
+  renegotiation: Renegotiation; // composição
+}
+
+
 ```
 
-</div>
 
-<br>
 
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
+---
+transition: slide-left
 
 ---
 
-# Motions
+# Tipando respostas da API
+<p class="text-lg leading-relaxed">Podemos utilizar para substituir no bom e velho PropTypes</p>
 
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
+```ts
+export interface ApiResponse {
+  success: boolean
+  message?: string
+  data?: {
+    id: string
+    amountCents: number
+    status: 'authorized' | 'captured' | 'refused'
+    createdAt: string
+  }
+}
+
+export async function getPayment(id: string): Promise<APApiResponseI> {
+  const res = await http.get<ApiResponse>(`/payments/${id}`);
+  return res.data.data;
+}
+```
+
+
+---
+transition: slide-left
+
+---
+
+# type x interface
+<p class="text-lg leading-relaxed">Podemos utilizar para substituir no bom e velho PropTypes</p>
+
+- Use `interface` para APIs de objeto que podem evoluir (ex.: modelos, props de componentes, contratos públicos, Window, “augment” de libs).
+
+- Use `type` para unions, tuples, funções, mapped types e utilitários; também é ótimo para compor tipos rapidamente com & e para aliases simples.
+
+*Na prática:*
+<blockquote>
+
+- Props de componente → tanto faz, mas interface costuma ficar mais legível e extensível em libs.
+
+- Tipos de domínio (Money, IDs, DTOs) → qualquer um. Se precisar de utilitários/mapeados, prefira type.
+
+- Chaves i18n/rotas/eventos (template literal/union) → type.
+</blockquote>
+
+
+
+---
+transition: slide-left
+layout: center
+---
+# Generics
+<p class="text-lg leading-relaxed">Aqui as coisas começam a ficar interessantes</p>
+
+
+**Generics** são uma forma de criar **funções, classes ou tipos que funcionam com vários tipos diferentes**, mas **sem perder a segurança de tipo**.
+
+É como se você quisesse dizer:
+
+> “Não sei ainda que tipo vou receber, mas quando eu souber, vou trabalhar com ele corretamente.”
 >
-  Slidev
-</div>
-```
 
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
+
+---
+layout: center
+background: '#ffffff'
+class: text-left
+---
+# Generics
+
+<div class="grid grid-cols-2 gap-6 my-6">
+
+  <div>
+
+  ```ts
+  function identidade(valor: any): any {
+    return valor
+  }
+  ```
+  Esse código funciona perfeitamente, porém, não temos segurança nenhuma. Se você passar uma string, pode receber um número e o Typescript não vai reclamar de nada.
   </div>
 
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
+  <div>
+
+  ```ts
+  function identidade<T>(valor: T): T {
+    return valor
+  }
+
+  const a = identidade<string>("Olá")  // a é do tipo string
+  const b = identidade<number>(10)     // b é do tipo number
+  const idade = identidade(25)         // TypeScript vai inferir o tipo number
+  ```
+  Nesse exemplo, `T` é um tipo genérico (que pode ser qualquer tipo: string, number, object, etc.).
   </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
 
 </div>
 
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
 
 ---
+layout: center
+background: '#ffffff'
+class: text-left
+---
 
-# Diagrams
+## Por que eu deveria usar Generics?
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+- Reutilização: Você escreve uma função que serve para vários tipos.
+- Segurança: mantém o tipo correto durante a execução do código.
+- Clareza: facilita a legibilidade e entendimento do que esperar da função e do seu retorno.
 
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
+### Com arrays
 
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
+```tsx
+function primeiroElemento<T>(array: T[]): T {
+  return array[0]
 }
 
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
+const num = primeiroElemento([1, 2, 3])     // number
+const str = primeiroElemento(["a", "b"])    // string
+```
+
+### Com interfaces
+
+```tsx
+interface Caixa<T> {
+  valor: T
 }
 
-cloud {
-  [Example 1]
+const caixaDeString: Caixa<string> = { valor: "Texto" }
+const caixaDeNumero: Caixa<number> = { valor: 123 }
+```
+
+
+---
+layout: center
+background: '#ffffff'
+class: text-left
+---
+
+## Constraints
+
+Constraints são limites/regras em genéricos (via extends) que dizem quais tipos são aceitos por um parâmetro de tipo.
+
+```tsx
+function getName<T extends { name: string }>(obj: T): string {
+  return obj.name;
 }
 
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
+getName({ nome: "João", idade: 30 }) // ✅
+getName({ idade: 30 })               // ❌ erro: falta o nome
+```
+
+- `T extends { name: string }` é uma <b>constraint</b> do genérico `T`: ela diz que qualquer tipo usado como `T` precisa ser atribuível a `{ name: string }`.
+
+- `T` <strong>deve ter pelo menos</strong> a propriedade `name` do tipo `string`. Ele pode ter campos extras, mas não pode faltar `name`.
+
+- Como consequência, dentro da função, obj.name é seguro e o retorno pode ser string sem undefined.
+
+---
+layout: center
+background: '#ffffff'
+class: text-left
+---
+
+### `keyof` com Generics
+
+Você pode criar funções que **acessam propriedades dinamicamente**
+
+```tsx
+function getValue<T, K extends keyof T>(obj: T, keyName: K): T[K] {
+  return obj[keyName]
 }
 
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
+const pessoa = { nome: "Ana", idade: 25 }
 
-@enduml
-```
+const nome = getValue(pessoa, "nome")  // tipo: string
+const idade = getValue(pessoa, "idade") // tipo: number
 
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
+getValue(pessoa, "altura") // ❌ erro: 'altura' não existe em 'pessoa'
 ```
 
 ---
 layout: center
-class: text-center
+background: '#ffffff'
+class: text-left
 ---
 
-# Learn More
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+## E aqui as coisas podem ficar bem confusas
 
-<PoweredBySlidev mt-10 />
+Então, vamos por partes
+
+<img src="/assets/generics-constrainst.png"  />
+
+
+---
+layout: default
+transition: fade
+---
+
+# Conditional Types (if/else para tipos)
+
+- Decidem **qual shape usar em tempo de tipo** com `T extends U ? X : Y`.  
+- É como um **if** do TypeScript: adapta interfaces/campos conforme condição (status, método, flag), com autocomplete e **bloqueio de combinações inválidas**.
+
+<br />
+
+```ts
+type Choose<T> = T extends string ? 'é string' : 'não é string';
+```
+<br />
+
+```ts
+interface ApiState<Loading extends boolean> {
+  loading: Loading;
+  data:  Loading extends true ? null : { id: string };
+  error: Loading extends true ? null : string | null;
+}
+```
+
+---
+layout: center
+background: '#ffffff'
+class: text-left
+---
+
+## Conditional Types Exemplo
+
+
+<div class="grid grid-cols-2 gap-6 my-6">
+
+  <div>
+
+  ```ts
+   type Method = 'pix' | 'boleto';
+
+    interface PaymentCommon {
+      id: string;
+      amountCents: number;
+    }
+
+    interface PixFields {
+      method: 'pix';
+      pixCode: string;   // E2E do PIX
+      payerKey: string;     // chave PIX (telefone, email, EVP etc.)
+    }
+
+    interface BoletoFields {
+      method: 'boleto';
+      barcode: string;      // código de barras
+      dueDate: string;      // ISO date
+    }
+  ```
+  
+  </div>
+
+  <div>
+
+  ```ts
+  // Conditional type escolhe o shape certo conforme M
+    type Payment<M extends Method> =
+      M extends 'pix'
+        ? PaymentCommon & PixFields
+        : PaymentCommon & BoletoFields;
+
+    /** Exemplos de uso */
+    const p1: Payment<'pix'> = {
+      id: 'p1',
+      amountCents: 1299,
+      method: 'pix',
+      pixCode: 'E123...',
+      payerKey: 'email@dominio.com',
+    };
+
+    const p2: Payment<'boleto'> = {
+      id: 'p2',
+      amountCents: 2590,
+      method: 'boleto',
+      barcode: '23793...',
+      dueDate: '2025-09-01',
+    };
+  ```
+ 
+  </div>
+
+</div>
+
+
+---
+layout: center
+background: '#3178c6'
+class: text-center text-white
+---
+
+# ❓ Dúvidas
+
+Espaço aberto para perguntas e discussões.
+
+
+---
+layout: center
+background: '#3178c6'
+class: text-center text-white
+---
+
+# 🙏 Obrigado!
+
+## Foi um prazer compartilhar esse conteúdo com vocês  
+### Vamos continuar aprendendo e explorando TypeScript 🚀
