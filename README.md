@@ -1,11 +1,35 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
 
-To start the slide show:
+# TypeScript na Prática
 
-- `pnpm install`
-- `pnpm dev`
-- visit <http://localhost:3030>
+Slides da talk **“TypeScript na Prática”** com exemplos de tipagem do dia a dia (enums, uniões, &, interfaces, generics, conditional types e APIs) feitos em Slidev.
 
-Edit the [slides.md](./slides.md) to see the changes.
+## Conteúdo
+- Por que usar TypeScript
+- Props tipadas para componentes
+- `enum` e uniões de literais
+- Interseção (`&`) e composição de tipos
+- Interfaces aninhadas e DTOs
+- Tipando respostas de API
+- `type` vs `interface`
+- Generics, constraints e `keyof`
+- Conditional Types
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+## Como rodar localmente
+```bash
+# 1) Instale dependências
+npm install
+
+# 2) Rode os slides em modo dev
+npm run dev
+# (alternativa direta)
+npx slidev slides.md --open
+````
+
+## Build estático
+
+Gera a versão estática para publicação (pasta `dist/`):
+
+```bash
+npm run build
+```
+
