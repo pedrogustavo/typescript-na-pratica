@@ -1,6 +1,7 @@
 ---
 # You can also start simply with 'default'
 theme: default
+download: '/slides-export.pdf'
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 background: '#3178C6'
